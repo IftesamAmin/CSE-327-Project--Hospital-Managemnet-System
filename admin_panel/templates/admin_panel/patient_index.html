@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+
+
+<div class = 'container text-center'  >
+________________________________________________________________________________________________________________________________________________________________
+
+{% extends 'admin_panel/patient_base.html' %}
+
+{% block body_block %}
+
+
+
+<h1>Manage Patients</h1>
+
+____________________________________________________________
+
+</div>
+
+
+<ul>
+{% if patient_list %}  <! Doctor List e Kichu Thake>
+
+{% for patient in patient_list %}
+
+<a href= "{% url 'admin_panel:patient_info' patient_id=patient.id %}"><li>{{patient.patient_name}}</li></a>
+
+
+<br></br>
+
+
+
+{% endfor %}
+
+{% else %}
+
+<h1>No Patient</h1>
+
+{% endif %}
+_______________________________________________________________________________________________________________________________________________________________________
+</ul>
+
+
+
+{% endblock body_block %}
